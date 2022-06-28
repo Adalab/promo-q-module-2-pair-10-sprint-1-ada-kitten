@@ -85,3 +85,19 @@ if (kittenDesc3.includes(descrSearchText)) {
     </li>`;
 
 }
+
+const plus1 = document.querySelector(".js_plus");
+plus1.addEventListener("click" , (event) => {
+   if(form.classList.contains("collapsed")) {
+    form.classList.remove("collapsed");
+   } else {
+    form.classList.add("collapsed");
+   }
+});
+
+
+
+
+
+
+
