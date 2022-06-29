@@ -86,16 +86,34 @@ if (kittenDesc3.includes(descrSearchText)) {
 
 }
 
-const plus1 = document.querySelector(".js_plus");
+/*const plus1 = document.querySelector(".js_plus");
 plus1.addEventListener("click" , (event) => {
    if(form.classList.contains("collapsed")) {
     form.classList.remove("collapsed");
    } else {
     form.classList.add("collapsed");
    }
-});
+});*/
+const plus1 = document.querySelector(".js_plus");
+
+function main() {
+    if (form.classList.contains("collapsed")) {
+        showNewCatForm()
+    } else {
+        hideNewCatForm()
+    }
+}
+
+function showNewCatForm() {
+    form.classList.remove('collapsed');
 
 
+}
+function hideNewCatForm() {
+    form.classList.add('collapsed');
+}
+
+plus1.addEventListener("click", main);
 
 
 
