@@ -106,14 +106,30 @@ function main() {
 
 function showNewCatForm() {
     form.classList.remove('collapsed');
-
-
 }
 function hideNewCatForm() {
     form.classList.add('collapsed');
 }
 
 plus1.addEventListener("click", main);
+
+
+const buttonCancelForm = document.querySelector('.js-btn-cancel');
+const imgForm = document.querySelector(".js-img");
+const nameForm = document.querySelector(".js-name");
+const razaForm = document.querySelector(".js-raza");
+const descForm = document.querySelector(".js-desc");
+
+const cancelNewKitten = (event) => {
+    event.preventDefault();
+    form.classList.add('collapsed');
+    imgForm.value = " ";
+    nameForm.value = " ";
+    razaForm.value = " ";
+    descForm.value = " ";
+  //completa o mueve el código para cancelar la creación de un nuevo gatito.
+};
+buttonCancelForm.addEventListener('click', cancelNewKitten);
 
 
 
