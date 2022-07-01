@@ -21,7 +21,33 @@ form.classList.add("js-new-form")
 //     </p>
 // </article>
 // </li>`;
-const list = document.querySelector(".list");
+/*objetos gatitos*/
+const kittenData = {
+    kittenImage: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+    kittenName: "Anastacio",
+    kittenDesc: " Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle",
+    kittenRace: "British Shorthair"
+
+
+};
+function renderKitten(kittenData) {
+    const cardList = `<li class="card">
+     <article>
+         <img class="card_img" src=${kittenData.kittenImage} alt="gatito" />
+         <h3 class="card_title">${kittenData.kittenName}</h3>
+         <h4 class="card_race">${kittenData.kittenDesc}</h4>
+         <p class="card_description">
+            ${kittenData.kittenRace}
+        </p>
+     </article>
+     </li>`;
+    return cardList
+}
+
+console.dir(kittenData.kittenName);
+console.log(renderKitten(kittenData));
+
+/*const list = document.querySelector(".list");
 const kittenImage = "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg";
 const kittenName = "Anastacio";
 const kittenRace = "British Shorthair";
@@ -93,7 +119,7 @@ plus1.addEventListener("click" , (event) => {
    } else {
     form.classList.add("collapsed");
    }
-});*/
+});
 const plus1 = document.querySelector(".js_plus");
 
 function main() {
@@ -127,9 +153,9 @@ const cancelNewKitten = (event) => {
     nameForm.value = " ";
     razaForm.value = " ";
     descForm.value = " ";
-  //completa o mueve el código para cancelar la creación de un nuevo gatito.
+    completa o mueve el código para cancelar la creación de un nuevo gatito.
 };
-buttonCancelForm.addEventListener('click', cancelNewKitten);
+buttonCancelForm.addEventListener('click', cancelNewKitten);*/
 
 
 
