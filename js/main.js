@@ -22,30 +22,76 @@ form.classList.add("js-new-form")
 // </article>
 // </li>`;
 /*objetos gatitos*/
-const kittenData = {
-    kittenImage: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
-    kittenName: "Anastacio",
-    kittenDesc: " Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle",
-    kittenRace: "British Shorthair"
 
+// const kittenData = {
+//     kittenImage: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+//     kittenName: "Anastacio",
+//     kittenDesc: " Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle",
+//     kittenRace: "British Shorthair"
+// };
 
-};
-function renderKitten(kittenData) {
-    const cardList = `<li class="card">
-     <article>
-         <img class="card_img" src=${kittenData.kittenImage} alt="gatito" />
-         <h3 class="card_title">${kittenData.kittenName}</h3>
-         <h4 class="card_race">${kittenData.kittenDesc}</h4>
-         <p class="card_description">
-            ${kittenData.kittenRace}
-        </p>
-     </article>
-     </li>`;
-    return cardList
+const list = document.querySelector(".list");
+const kittenDataList = [
+        {
+        image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+        name: 'Anastacio',
+        desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+        race: 'British Shorthair',
+        },
+
+        {
+        image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+        name: 'Fiona',
+        desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+        race: 'British Shorthair',
+    },
+    {
+        image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
+        name: 'Thor',
+        desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
+        race: 'British Shorthair',
+    }
+    ];
+
+function renderOnePet(petData) {
+    const html = `<li class="card">
+      <article>
+          <img class="card_img" src=${petData.image}        
+          alt="gatito" />
+          <h3 class="card_title">${petData.name}</h3>
+          <h4 class="card_race">${petData.race}</h4>
+          <p class="card_description">
+             ${petData.desc}
+         </p>
+      </article>
+      </li>`;
+      return html;
 }
 
-console.dir(kittenData.kittenName);
-console.log(renderKitten(kittenData));
+list.innerHTML += renderOnePet(kittenDataList[0]);
+list.innerHTML += renderOnePet(kittenDataList[1]);
+list.innerHTML += renderOnePet(kittenDataList[2]);
+// console.log(renderOnePet(kittenDataList[0]));
+// console.log(renderOnePet(kittenDataList[1]));
+
+
+
+// function renderKitten(kittenData) {
+//     const cardList = `<li class="card">
+//      <article>
+//          <img class="card_img" src=${kittenData.kittenImage} alt="gatito" />
+//          <h3 class="card_title">${kittenData.kittenName}</h3>
+//          <h4 class="card_race">${kittenData.kittenDesc}</h4>
+//          <p class="card_description">
+//             ${kittenData.kittenRace}
+//         </p>
+//      </article>
+//      </li>`;
+//     return cardList;
+// }
+
+// console.dir(kittenData.kittenName);
+// console.log(renderKitten(kittenData));
 
 /*const list = document.querySelector(".list");
 const kittenImage = "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg";
