@@ -32,14 +32,14 @@ form.classList.add("js-new-form")
 
 const list = document.querySelector(".list");
 const kittenDataList = [
-        {
+    {
         image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
         name: 'Anastacio',
         desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
         race: 'British Shorthair',
-        },
+    },
 
-        {
+    {
         image: 'https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg',
         name: 'Fiona',
         desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
@@ -51,21 +51,35 @@ const kittenDataList = [
         desc: 'Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!',
         race: 'British Shorthair',
     }
-    ];
+];
+function renderkittenList(kittenDataList) {
+    list.innerHTML = '';
+    for (const kitten of kittenDataList) {
 
-function renderOnePet(petData) {
-    const html = `<li class="card">
-      <article>
-          <img class="card_img" src=${petData.image}        
-          alt="gatito" />
-          <h3 class="card_title">${petData.name}</h3>
-          <h4 class="card_race">${petData.race}</h4>
-          <p class="card_description">
-             ${petData.desc}
-         </p>
-      </article>
-      </li>`;
-      return html;
+        /*list.innerHTML += `<li><article>${kitten.name}</article></li>`;
+        list.innerHTML += `<li><img src=${kitten.image}alt="gatito"/></li>`;
+        list.innerHTML += `<li><article>${kitten.desc}</article></li>`;
+        list.innerHTML += `<li><article>${kitten.race}</article></li>`;*/
+        list.innerHTML += `<ul><li><article>${kitten.name}</li>
+<li><img src=${kitten.image}alt="gatito"/></li>
+<li>${kitten.desc}</li>
+<li>${kitten.race}</article></li></ul>`;
+    }
+}
+renderkittenList(kittenDataList)
+/*function renderOnePet(petData) {
+    const html = `< li class="card" >
+            <article>
+                <img class="card_img" src=${petData.image}
+                    alt="gatito" />
+                <h3 class="card_title">${petData.name}</h3>
+                <h4 class="card_race">${petData.race}</h4>
+                <p class="card_description">
+                    ${petData.desc}
+                </p>
+            </article>
+      </li > `;
+    return html;
 }
 
 list.innerHTML += renderOnePet(kittenDataList[0]);
@@ -77,7 +91,7 @@ list.innerHTML += renderOnePet(kittenDataList[2]);
 
 
 // function renderKitten(kittenData) {
-//     const cardList = `<li class="card">
+//     const cardList = `< li class="card" >
 //      <article>
 //          <img class="card_img" src=${kittenData.kittenImage} alt="gatito" />
 //          <h3 class="card_title">${kittenData.kittenName}</h3>
@@ -156,15 +170,15 @@ if (kittenDesc3.includes(descrSearchText)) {
     </article>
     </li>`;
 
-}
+}*/
 
 /*const plus1 = document.querySelector(".js_plus");
-plus1.addEventListener("click" , (event) => {
-   if(form.classList.contains("collapsed")) {
-    form.classList.remove("collapsed");
-   } else {
-    form.classList.add("collapsed");
-   }
+plus1.addEventListener("click", (event) => {
+    if (form.classList.contains("collapsed")) {
+        form.classList.remove("collapsed");
+    } else {
+        form.classList.add("collapsed");
+    }
 });
 const plus1 = document.querySelector(".js_plus");
 
